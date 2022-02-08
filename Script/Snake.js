@@ -1,6 +1,6 @@
 import { getInput } from "./Input.js"
 
-export const movement = 1
+export const movement = 2
 
 //To set the snake at the very center of the gameboard at start.
 const snake=[{x:11, y:11}]
