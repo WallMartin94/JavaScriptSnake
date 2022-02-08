@@ -41,7 +41,8 @@ function update (){
 
 //Render the snake at the new position
 function draw(){
-
-reRenderSnake(snakeBoard)
+//To make sure to remove previously drawn parts when appropriate 
+    snakeBoard.innerHTML =''
+    reRenderSnake(snakeBoard)
 
 }
