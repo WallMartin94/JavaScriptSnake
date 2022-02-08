@@ -5,10 +5,16 @@ export const movement = 2
 //To set the snake at the very center of the gameboard at start.
 const snake=[{x:11, y:11}]
 
+let newBody=0
+let points=0
+
 
 
 //Define how to update the snake
 export function update(){
+
+    addParts()
+
 const input=getInput()
 for (let i = snake.length-1; i>=0; i--){
 //Creating a duplicate part of the snake to render the extra parts at correct position
@@ -39,4 +45,42 @@ snakeBoard.appendChild(snakeBody)
 
 })
 
+}
+
+export function increaseSnake(amount){
+
+
+newBody+=amount
+
+}
+
+export function  eat (position, points){
+
+return snake.some(snakeBody=>{
+    return samePosition(snakeBody, position)
+
+
+
+
+})
+
+
+}
+//Checking if the snake has eaten an apple
+export function samePosition(pos1, pos2){
+
+return  (pos1.x ===pos2.x&&pos1.y ===pos2.y)
+
+
+}
+
+//Function to add a new part to the snake when it has eaten an apple
+function addParts(){
+
+for(let i=0; i<newBody; i++){
+
+snakeBody.push({...snakeBody[snakeBody.length-1]})
+
+}
+newBody=0
 }

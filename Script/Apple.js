@@ -1,6 +1,25 @@
-let apple
+
+
+import { eat, increaseSnake } from './Snake.js'
+
+
+const GRID_SIZE=21
+let apple=generateApple()
+
+const EXPANSION=1
 
 export function update(){
+
+if(eat(apple)){
+
+increaseSnake(EXPANSION)
+
+
+apple=generateApple()
+
+}
+
+
     
     }
     
@@ -23,4 +42,21 @@ export function update(){
     snakeBoard.appendChild(appleElement)
 
     }
+
+function generateApple(){
+
+    let newApple
+    while(newApple==null || eat(newApple)){
+
+        newApple=randomGridPos()
+
+    }
+return newApple
+}
+
+function randomGridPos(){
+
+    return{x: Math.floor(Math.random()*GRID_SIZE)+1,
+           y: Math.floor(Math.random()*GRID_SIZE)+1
+        }
 }

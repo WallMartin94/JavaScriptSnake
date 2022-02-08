@@ -2,7 +2,7 @@ let input = {x:0 , y:0}
 let lastInput ={x:0, y:0}
 
 //Adding listener to detect keystrokes and if statments to prevent impossible movement.
-window.addEventListener('keydowm', event =>{
+document.addEventListener('keydown', event =>{
 
 switch (event.key){
 case 'ArrowDown':
