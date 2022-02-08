@@ -10,10 +10,9 @@ case 'ArrowDown':
     input={x:0, y:+1}
     break
     
-    case 'ArrowUP':
+    case 'ArrowUp':
     if(lastInput.y!==0)break
-
-    input={x:0, y:+-1}
+    input={x:0, y:-1}
     break
     
     case 'ArrowRight':

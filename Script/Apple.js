@@ -1,9 +1,10 @@
 
 
 import { eat, increaseSnake } from './Snake.js'
+import {randomGridPos} from './Grid.js'
 
 
-const GRID_SIZE=21
+
 let apple=generateApple()
 
 const EXPANSION=1
@@ -18,10 +19,7 @@ increaseSnake(EXPANSION)
 apple=generateApple()
 
 }
-
-
-    
-    }
+ }
     
     
     
@@ -52,11 +50,5 @@ function generateApple(){
 
     }
 return newApple
-}
 
-function randomGridPos(){
-
-    return{x: Math.floor(Math.random()*GRID_SIZE)+1,
-           y: Math.floor(Math.random()*GRID_SIZE)+1
-        }
 }

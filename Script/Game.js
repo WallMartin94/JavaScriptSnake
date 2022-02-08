@@ -1,10 +1,10 @@
 //Importing variables and functions that are defined in separate scripts.
-import {movement}from './Snake.js'
-import { update as updateSnake } from './Snake.js'
-import { draw as reRenderSnake } from './Snake.js'
-import {update as updateApple}from '.Apple.js'
-import {draw as drawApple} from '.Apple.js'
+import {movement, update as updateSnake ,draw as reRenderSnake,getSnakeHead,snakeSelfHit}from './Snake.js'
+import {update as updateApple, draw as drawApple}from './Apple.js'
+import {outsideGrid} from './Grid.js'
+
 let lastRender=0
+let gameOver=false
 //Should be careful using id here since if the project was larger there could be many other things having that id name. Works in this case.
 const snakeBoard = document.getElementById('snake-board')
 
@@ -13,6 +13,11 @@ const snakeBoard = document.getElementById('snake-board')
 
 //To calculate gamespeed
 function gameLoop (currentTime){
+
+    if(gameOver){
+
+        return alert('You lost\nPoints: ')
+    }
    
     window.requestAnimationFrame(gameLoop)
     
@@ -37,6 +42,7 @@ function update (){
 
     updateSnake()
     updateApple()
+    checkLoss()
 
 
 }
@@ -45,8 +51,15 @@ function update (){
 function draw(){
 //To make sure to remove previously drawn parts when appropriate 
     snakeBoard.innerHTML =''
+    
     reRenderSnake(snakeBoard)
-
     drawApple(snakeBoard)
 
+}
+
+function checkLoss(){
+
+
+
+    gameOver = outsideGrid(getSnakeHead())||snakeSelfHit()
 }

@@ -6,7 +6,7 @@ export const movement = 2
 const snake=[{x:11, y:11}]
 
 let newBody=0
-let points=0
+
 
 
 
@@ -16,7 +16,7 @@ export function update(){
     addParts()
 
 const input=getInput()
-for (let i = snake.length-1; i>=0; i--){
+for (let i = snake.length-2; i>=0; i--){
 //Creating a duplicate part of the snake to render the extra parts at correct position
 snake[i+1]={...snake[i]}
 
@@ -54,11 +54,18 @@ newBody+=amount
 
 }
 
-export function  eat (position, points){
+export function  eat (position, {ignoreHead=false}={}){
 
-return snake.some(snakeBody=>{
-    return samePosition(snakeBody, position)
+return snake.some((snakeBody,index)=>{
+   
+   if(ignoreHead&&index==0)
+   
+   return false
+    return samePosition(snakeBody,position)
 
+
+   
+   
 
 
 
@@ -79,8 +86,22 @@ function addParts(){
 
 for(let i=0; i<newBody; i++){
 
-snakeBody.push({...snakeBody[snakeBody.length-1]})
+snake.push({...snake[snake.length-1]})
 
 }
 newBody=0
+}
+
+export function getSnakeHead(){
+
+
+    return snake[0]
+
+}
+
+export function snakeSelfHit(){
+
+    return eat(snake[0], {ignoreHead:true})
+ 
+
 }
