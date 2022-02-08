@@ -23,3 +23,19 @@ display: grid;
 grid-template-rows: repeat(21,1fr);
 grid-template-columns: repeat(21,1fr);
 }
+
+
+.snake{
+
+background-color: greenyellow;
+border: .25vmin solid black;
+
+
+}
+
+.food{
+
+background-color: rgb(255, 0, 0);
+border: .25vmin solid black;
+
+}
