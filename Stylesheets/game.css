@@ -13,7 +13,7 @@ background-color: black;
 
 
 
-
+/*Define visuals for the game board*/
 #snake-board{
 
 background-color: #CCC;
@@ -24,7 +24,7 @@ grid-template-rows: repeat(21,1fr);
 grid-template-columns: repeat(21,1fr);
 }
 
-
+/*Define visuals for the snake*/
 .snake{
 
 background-color: greenyellow;
@@ -33,6 +33,8 @@ border: .25vmin solid black;
 
 }
 
+
+/*Define the visuals for the food*/
 .food{
 
 background-color: rgb(255, 0, 0);
