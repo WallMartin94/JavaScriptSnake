@@ -5,6 +5,8 @@ import {outsideGrid} from './Grid.js'
 
 let lastRender=0
 let gameOver=false
+let score = 0
+
 //Should be careful using id here since if the project was larger there could be many other things having that id name. Works in this case.
 const snakeBoard = document.getElementById('snake-board')
 
@@ -13,6 +15,8 @@ const snakeBoard = document.getElementById('snake-board')
 
 //To calculate gamespeed
 function gameLoop (currentTime){
+
+   
 
     if(gameOver){
 
@@ -40,9 +44,19 @@ window.requestAnimationFrame(gameLoop)
 //Calcuate the new snake position
 function update (){
 
+    drawScore()
     updateSnake()
     updateApple()
     checkLoss()
+
+
+}
+
+
+function drawScore(){
+
+    
+
 
 
 }
@@ -60,6 +74,6 @@ function draw(){
 function checkLoss(){
 
 
-
     gameOver = outsideGrid(getSnakeHead())||snakeSelfHit()
+    
 }

@@ -41,4 +41,37 @@ border: .25vmin solid black;
 
 }
 
+#scoreLabel{
+
+   
+font-size: 50px;
+
+color:white;
+
+justify-content: right;
+
+margin-top: 0;
+
+
+
+}
+
+#HighScoreButton{
+
+    height: 50px;
+    width: 200px;
+
+position: absolute; top: 0; right: 0;
+background-color: blue;
+border-color: white;
+border-radius: 10px;
+color:white;
+font-size: 20px;
+font-weight: bold;
+
+margin-top: 250px;
+margin-right: 500px;
+
+}
+
 
