@@ -1,6 +1,9 @@
 import { getInput } from "./Input.js"
 
-export const movement = 4
+export let movement = 4
+
+
+
 
 //To set the snake at the very center of the gameboard at start.
 const snake=[{x:11, y:11}]
@@ -12,7 +15,8 @@ let newBody=0
 
 //Define how to update the snake
 export function update(){
-
+     
+    
     addParts()
 
 const input=getInput()
@@ -49,7 +53,7 @@ snakeBoard.appendChild(snakeBody)
 
 export function increaseSnake(amount){
 
-
+updateScore()
 newBody+=amount
 
 }
@@ -60,21 +64,24 @@ return snake.some((snakeBody,index)=>{
    
    if(ignoreHead&&index==0)
    
-    return false
-    return samePosition(snakeBody,position)
 
 
    
+    return false
+    return samePosition(snakeBody,position)
+
+       
    
 
 
 
 })
 
-
 }
 //Checking if the snake has eaten an apple
-export function samePosition(pos1, pos2){
+export function samePosition(pos1, pos2,){
+
+
 
 return  (pos1.x ===pos2.x&&pos1.y ===pos2.y)
 
@@ -84,12 +91,18 @@ return  (pos1.x ===pos2.x&&pos1.y ===pos2.y)
 //Function to add a new part to the snake when it has eaten an apple
 function addParts(){
 
+
+
+
 for(let i=0; i<newBody; i++){
 
 snake.push({...snake[snake.length-1]})
 
 }
 newBody=0
+
+
+
 }
 
 export function getSnakeHead(){
@@ -105,3 +118,31 @@ export function snakeSelfHit(){
  
 
 }
+
+
+function updateScore(){
+
+
+
+    let scoreText= document.querySelector(".numberLabel").innerHTML
+    
+    
+       let score = parseInt(scoreText)
+
+
+    if(!isNaN(score)){
+    
+    score++
+   
+    
+    document.querySelector(".numberLabel").innerHTML=score.toString()
+    
+    
+    }
+    
+    
+    
+    
+    }
+
+

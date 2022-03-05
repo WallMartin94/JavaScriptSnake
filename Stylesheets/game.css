@@ -41,7 +41,7 @@ border: .25vmin solid black;
 
 }
 
-#scoreLabel{
+.scoreLabel{
 
    
 font-size: 50px;
@@ -56,7 +56,22 @@ margin-top: 0;
 
 }
 
-#HighScoreButton{
+.numberLabel{
+
+   
+    font-size: 50px;
+    
+    color:white;
+    
+    justify-content: right;
+    
+    margin-top: 0;
+    
+    
+    
+    }
+
+.HighScoreButton{
 
     height: 50px;
     width: 200px;
