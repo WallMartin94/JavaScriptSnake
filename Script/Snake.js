@@ -133,6 +133,18 @@ function updateScore(){
     if(!isNaN(score)){
     
     score++
+        //If the player reaches a certain score we can increase the speed of the snake if we like.
+    if(score===5){
+
+        movement=5
+
+    }
+
+    if(score===10){
+
+        movement=7
+
+    }
    
     
     document.querySelector(".numberLabel").innerHTML=score.toString()

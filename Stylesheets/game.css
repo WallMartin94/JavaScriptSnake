@@ -71,12 +71,12 @@ margin-top: 0;
     
     }
 
-.HighScoreButton{
+.highScoreButton{
 
     height: 50px;
     width: 200px;
 
-position: absolute; top: 0; right: 0;
+position:relative;
 background-color: blue;
 border-color: white;
 border-radius: 10px;
@@ -84,9 +84,36 @@ color:white;
 font-size: 20px;
 font-weight: bold;
 
-margin-top: 250px;
-margin-right: 500px;
 
 }
 
+.scores{
+
+color:white
+
+
+}
+
+.backButton{
+  
+    background-color: blue;
+    border-color: white;
+    border-radius: 10px;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+ 
+}
+.buttonContainer{
+width: 200;
+height: 200;
+
+position:relative;
+
+
+}
 
