@@ -1,0 +1,168 @@
+body {
+
+height: 80%;
+width: 80%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: black;
+
+}
+
+
+
+
+/*Define visuals for the game board*/
+#snake-board{
+
+background-color: #CCC;
+width: 100vmin;
+height: 100vmin;
+display: grid;
+grid-template-rows: repeat(21,1fr);
+grid-template-columns: repeat(21,1fr);
+}
+
+/*Define visuals for the snake*/
+.snake{
+
+background-color: greenyellow;
+border: .25vmin solid black;
+
+
+}
+
+
+/*Define the visuals for the food*/
+.apple{
+
+background-color: rgb(255, 0, 0);
+border: .25vmin solid black;
+
+}
+
+.scoreLabel{
+
+   
+font-size: 50px;
+
+color:white;
+
+justify-content: right;
+
+margin-top: 0;
+
+
+
+}
+
+.numberLabel{
+
+   
+    font-size: 50px;
+    
+    color:white;
+    
+    justify-content: right;
+    
+    margin-top: 0;
+    
+    
+    
+    }
+
+.highScoreButton{
+
+    height: 50px;
+    width: 200px;
+
+position:relative;
+background-color: blue;
+border-color: white;
+border-radius: 10px;
+color:white;
+font-size: 20px;
+font-weight: bold;
+
+
+}
+
+.scores{
+
+color:white
+
+
+}
+
+.backButton{
+  
+    background-color: blue;
+    border-color: white;
+    border-radius: 10px;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+ 
+}
+.buttonContainer{
+width: 200;
+height: 200;
+
+position:relative;
+
+
+}
+
+.scores{
+
+color:white;
+
+}
+
+
+.gameOverHeader{
+
+
+color: white
+
+}
+
+label{color:white}
+
+.submitButton{
+
+
+    height: 50px;
+    width: 200px;
+
+position:relative;
+background-color: blue;
+border-color: white;
+border-radius: 10px;
+color:white;
+font-size: 20px;
+font-weight: bold;
+
+
+}
+
+.cancelButton{
+    background-color: blue;
+    border-color: white;
+    border-radius: 10px;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+
+}
+
+
+

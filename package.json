@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security"
+   
+  },
+  "name": "javascriptsnake",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WallMartin94/JavaScriptSnake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WallMartin94/JavaScriptSnake/issues"
+  },
+  "homepage": "https://github.com/WallMartin94/JavaScriptSnake#readme"
+}

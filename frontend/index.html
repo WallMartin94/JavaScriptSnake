@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin's Snake Game World</title>
+    <link rel ="stylesheet" href= ./game.css >
+    
+    
+
+</head>
+<body class = body>
+    <article>
+        <h1>Highscores</h1>
+        <section class="scores"></section>
+    </article>
+    <article>
+        <h1>Highscores</h1>
+        <section class="gameOver"></section>
+    </article>
+    <div id="snake-board"></div>
+    <div class="scoreLabel">Score: </div>
+    <div class="numberLabel"type=text> 0 </div>
+
+
+    <div class="buttonContainer">
+        <button id="scoreButton" class="highScoreButton">Highscores</button>
+        <button id="backToGameButton" class="backButton"onclick="document.location.replace('http://127.0.0.1:3000')">Back to the game</button>
+    </div>
+    
+    
+</body>  
+<script src= ./Game.js   type="module" defer></script>
+
+
+
+</html>
