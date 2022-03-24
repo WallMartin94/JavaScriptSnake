@@ -161,15 +161,6 @@ scoreButton.addEventListener('click',function (e){
 function gameOverFunction(printPoints){
   
 
-
-
-
-
-
-
-
-
-
 let html=`
 
 <body>
@@ -222,106 +213,35 @@ function submit(printPoints){
 
 
 
-if(finalScore.includes("0")){
 
+console.log(finalScore)
 
-finalScore="0"
-finalScore=parseInt(finalScore)
-submitHelper(finalScore,newName)
+finalScore=+finalScore.split(":")[1]
 
+console.log(finalScore)
 
-}else{
-
-
-finalScore=finalScore.slice(-1)
-finalScore=parseInt(finalScore)
-submitHelper(finalScore,newName)
+updateHighScore(finalScore,newName)
 }
 
-
-
-//Carving out the score number from the whole string
-
-
-
-
-
-
-
-
-
-    
-
-
-  
-  }
-
+   
   
 
- 
+ async function updateHighScore(score, name){
 
-   }
-  
+  let scoreList = await (await fetch('./score.json')).json()
 
-async function submitHelper(finalScore, newName){
+  scoreList.push({name,score})
 
-  //Empty Array to store the current highscore list
- 
+  scoreList.sort((a,b)=>a.score>b.score?-1:1)
 
+  scoreList=scoreList.slice(0,10)
 
-  let scoreArray = []
-  let newScore = {name: newName, score: finalScore}
-  
-
-  newScore.name=newName
-  newScore.score=finalScore
-
-
-
- 
-  let rawData = await fetch('./score.json')
-
-  let oldScorers = await  rawData.json()
-
- 
-
-  for(let i in oldScorers){
- 
-
-scoreArray.push([i,oldScorers[i]])
-
-  
-}
-console.log(scoreArray[2][1].score)
-
-for(let i=0; i<scoreArray.length;i++){
-
-
-
-if(newScore.score>=scoreArray[i][1].score){
-
-    scoreArray.splice(i,0,newScore)
-
- 
-    let json =JSON.stringify(scoreArray)
-    fs.writeFile("./score.json",json)
-
-  break;
-}
-
-
-
-if(newScore.score<scoreArray[scoreArray.length-1][1].score){
-
-scoreArray.push(newScore)
-
-let json =JSON.stringify(scoreArray)
-fs.writeFile("./score.json",json)
-
-break;
-}
+  let result  = await (await fetch('/api/writeScore',{
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(scoreList)
+  })).json()
 
 }
-
 
 }

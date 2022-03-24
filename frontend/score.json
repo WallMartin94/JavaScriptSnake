@@ -1,18 +1,10 @@
 [
-{
-"name":"Hans",
-"score": 3
-},
-{
- 
- "name":"Hanna",
- "score": 2
-    },
-{
-  
-  "name":"Erik",
-  "score": 1
-    }
-
-
+  {
+    "name": "Sara",
+    "score": 3
+  },
+  {
+    "name": "Hans",
+    "score": 2
+  }
 ]

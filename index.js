@@ -20,3 +20,9 @@ app.listen(port, () =>
 
 
 const fs = require('fs')
+app.post("/api/writeScore",(req,res)=>{
+
+ fs.writeFileSync('./frontend/score.json',JSON.stringify(req.body,null,"  "),"utf-8")
+
+ res.json({OK:true})
+})
