@@ -15,6 +15,9 @@ background-color: black;
 /*Define visuals for the game board*/
 #snake-board{
 
+  min-height: 500px;
+  min-width: 500px;  
+
 background-color: #CCC;
 width: 100vmin;
 height: 100vmin;
